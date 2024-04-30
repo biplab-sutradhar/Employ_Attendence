@@ -25,14 +25,14 @@ function App()  {
     </Col>
     <Col xs={{ span: 10, offset: set }} className="overflow-auto">
             <Routes>
-              <Route path="/allemployees" element={<AllEmployees />} />
+              <Route path="/" element={<AllEmployees />} />
               <Route path="/holidays" element={<Holidays />} />
               <Route path="/admin-leaves" element={<LeavesAdmin />} />
               <Route path="/employee-leaves" element={<LeavesEmployee />} />
               <Route path="/leave-settings" element={<LeaveSettings />} />
               <Route path="/admin-attendance" element={<AttendanceAdmin />} />
               <Route path="/employee-attendance" element={<AttendanceEmployee />} />
-              <Route path="*" element={<Navigate to="/allemployees" />} />
+              <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Col>
         </Row>
