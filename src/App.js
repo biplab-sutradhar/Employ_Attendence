@@ -28,7 +28,7 @@ function App()  {
     </Col>
     <Col xs={{ span: open ? 10 : 11, offset: set }} className="overflow-auto"> 
             <Routes>
-              <Route path="/:path" element={<AllEmployees />} />
+              <Route path="/" element={<AllEmployees />} />
               <Route path="/holidays" element={<Holidays />} />
               <Route path="/admin-leaves" element={<LeavesAdmin />} />
               <Route path="/employee-leaves" element={<LeavesEmployee />} />
