@@ -1,6 +1,5 @@
-import React, { useState } from 'react'; 
-import employees from '../assets/employData';
-import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap'; 
+import React, { useState } from 'react';  
+import {  Col,   Dropdown } from 'react-bootstrap'; 
 import CustomModal from './CustomModal';
 
 const EmployeeCard = ({ employee }) => {

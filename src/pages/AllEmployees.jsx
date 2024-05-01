@@ -5,13 +5,11 @@ import employees from '../assets/employData';
 import CustomModal from "../components/CustomModal";
 import { MdOutlineGridOn } from "react-icons/md";
 import { GiHamburgerMenu } from "react-icons/gi";
-import EmployeeTable from "../components/allEmploytable";
-import { Link, useParams } from "react-router-dom";
+import EmployeeTable from "../components/allEmploytable"; 
 
 const AllEmployees = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [table, setTable] = useState(false);
-  const {path} = useParams();
+  const [table, setTable] = useState(false); 
   // console.log(path);
   const handleOpenModal = () => {
     setModalOpen(true);

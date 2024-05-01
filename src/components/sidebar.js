@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { ListGroup } from 'react-bootstrap';
-import { GoDotFill } from "react-icons/go";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { GoDotFill } from "react-icons/go"; 
 
 const Sidebar = ({open, setOpen}) => {
   const [activeLink, setActiveLink] = useState(null);
