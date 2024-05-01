@@ -15,20 +15,18 @@ import Header from './components/Header.js';
 
 function App()  {
   const [open, setOpen] = useState(true)
-  const set = open ? 2 : 1; 
-  const {path} = useParams();
-  // console.log(path);
+  const set = open ? 2 : 0; 
   return (
     <Router>
-      <Header/>
+      <Header open={open} setOpen={setOpen}/>
       <Container fluid>
         <Row>
-        <Col xs={set} className="position-fixed bg-dark text-white w-5 h-100">
+      { open && <Col xs={set} className=" display-6 position-fixed bg-dark text-white w-5 h-100">
         <Sidebar open={open} setOpen={setOpen}/>
-    </Col>
-    <Col xs={{ span: open ? 10 : 11, offset: set }} className="overflow-auto"> 
+    </Col>}
+    <Col xs={{ span: open ? 10 : 12, offset: set }} className="overflow-auto"> 
             <Routes>
-              <Route path="/:path" element={<AllEmployees />} />
+              <Route path="/" element={<AllEmployees />} />
               <Route path="/holidays" element={<Holidays />} />
               <Route path="/admin-leaves" element={<LeavesAdmin />} />
               <Route path="/employee-leaves" element={<LeavesEmployee />} />

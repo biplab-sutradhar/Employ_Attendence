@@ -20,15 +20,10 @@ const Sidebar = ({open, setOpen}) => {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
-  const toggleSidebar = () => {
-    setOpen(!open)
-  };
-
+   
   return (
-    <div className={`h-100 bg-dark sticky-left text-white `} style={{ width: open ? '100%' : '50px', transition: 'width 0.5s'}}>
-      <div className={`d-flex${open ? ' justify-content-end':' justify-content-start'}`}>
-        <GiHamburgerMenu size={30} onClick={toggleSidebar} />
-      </div>
+    <div className={`h-100 bg-dark text-white `} style={{ width: open ? '100%' : '0px', transition: 'width 0.5s'}}>
+     
      {open && <ListGroup variant="flush">
         {sidebarItems.map((item, index) => (
           <LinkContainer key={index} to={item.to}

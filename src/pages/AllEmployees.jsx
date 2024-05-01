@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Container, Row } from "react-bootstrap";
+import { Button, Container, Form, InputGroup, Row } from "react-bootstrap";
 import EmployeeCard from "../components/allEmployeCard";
 import employees from '../assets/employData';
 import CustomModal from "../components/CustomModal";
@@ -23,16 +23,21 @@ const AllEmployees = () => {
 
   return (
     <Container fluid className="bg-light min-vh-100 p-2 overflow-auto">
-      <h1 className="  ">Employee Dashboard</h1>
-
-       { <span> 
-         <Link to="/"  className=' text-reset text-decoration-none me-1'>Home</Link> /
-        <Link to={path}  className=' text-reset text-decoration-none ms-1'>{path}</Link> 
-      </span>}
-      <div className=' w-100 d-flex justify-content-end mb-3 gap-2'> 
+      <h1 className="  ">Employee Dashboard</h1> 
+      <div className=' w-100 d-flex justify-content-end mb-3 gap-2'>   
       <Button style={{ background: table ? 'white' : 'orange', color: table ? 'black' : 'white', borderRadius: '25px', border: "none" }}  onClick={() => setTable(false)} > <MdOutlineGridOn size={30} className="mx-1"/> </Button>
       <Button style={{ background: table ? 'orange' : 'white',color: table ? 'white' : 'black',  borderRadius: '25px', border: "none" }}  onClick={() => setTable(true)}><GiHamburgerMenu size={30} className="mx-1" /> </Button>
          <Button style={{ background: 'orange', borderRadius: '25px', border: "none" }} onClick={handleOpenModal}>+ Add employee</Button>
+    </div>
+    <div className=' container'>
+      <div className=" gap-5 row">
+       <Input/> 
+       <Input/> 
+       <Input/> 
+      <Button className="col-sm bg-success  " style={{width : "10%", height : "40px"}}>Search</Button> 
+      </div>
+    
+      
     </div>
       <Container>
         {table ? (
@@ -56,3 +61,17 @@ const AllEmployees = () => {
 }
 
 export default AllEmployees;
+
+const Input = () => {
+  return (
+     
+      <InputGroup className="col-sm mb-3 ">
+        
+        <Form.Control
+          aria-label="Default"
+          aria-describedby="inputGroup-sizing-default"
+          placeholder="Search"
+        />
+      </InputGroup>
+)}
+
