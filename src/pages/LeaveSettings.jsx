@@ -60,7 +60,7 @@ const sizePerPageList = [
 ];
 const LeaveSettings = () => {
   return (
-      <div className="container">
+      <div className="container ">
           <h1>Annual</h1>
           <div className='w-100 '>
           <Form className=' w-100 d-flex allign-items-center justify-content-end'>
@@ -74,6 +74,7 @@ const LeaveSettings = () => {
             <EditableField label="Policy Name" initialValue="5 years service" />
             <EditableFieldWithRadio label="Policy Name" initialValue="Carry forward" radioOptions={['Yes', 'No' ]} />
             <EditableFieldWithRadio label="Earned leave" initialValue="5 years service" radioOptions={['Yes', 'No' ]} />
+            <br />
             <Table
               columns={columns}
               data={data}
@@ -85,6 +86,7 @@ const LeaveSettings = () => {
       </div>
       <div className='p-3 border rounded mb-5 mt-3'>
             <EditableField label="Policy Name" initialValue="5 years service" />
+            <br />
             <Table
               columns={columns}
               data={data} 
@@ -97,6 +99,7 @@ const LeaveSettings = () => {
         <EditableField label="Policy Name" initialValue="5 years service" />
         <EditableFieldWithRadio label="Policy Name" initialValue="Carry forward" radioOptions={['Yes', 'No' ]} />
         <EditableFieldWithRadio label="Earned leave" initialValue="5 years service" radioOptions={['Yes', 'No' ]} />
+        <br />
         <Table
         columns={columns}
         data={data}

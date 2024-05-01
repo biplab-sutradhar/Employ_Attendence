@@ -35,17 +35,6 @@ const columns = [
   {
     Header: "Status",
     accessor: "status",
-    Cell: ({ cell: { value } }) => (
-      <StatusComponent
-        status=""
-        options={[
-          () => <span onClick={() => console.log('New clicked')}>New</span>,
-          () => <span onClick={() => console.log('Pending clicked')}>Pending</span>,
-          () => <span onClick={() => console.log('Approved clicked')}>Approved</span>,
-          () => <span onClick={() => console.log('Declined clicked')}>Declined</span>,
-        ]}
-      />
-    ),
     sort: false,
   },
   {

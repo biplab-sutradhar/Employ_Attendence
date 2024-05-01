@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from "react";
+import { Button, Container, Row } from "react-bootstrap";
+import EmployeeCard from "../components/allEmployeCard";
 import employees from '../assets/employData';
-import Modal from 'react-bootstrap/Modal';
-import Dropdown from 'react-bootstrap/Dropdown';
-import EmployeeForm from '../components/employeeForm';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import CustomModal from "../components/CustomModal";
+import { MdOutlineGridOn } from "react-icons/md";
+import { GiHamburgerMenu } from "react-icons/gi";
+import EmployeeTable from "../components/allEmploytable";
+import { Link, useParams } from "react-router-dom";
 
-const Employee = ({ employee }) => {
+const AllEmployees = () => {
   const [isModalOpen, setModalOpen] = useState(false);
-  const [statusComponentOpen, setStatusComponentOpen] = useState(false);
-
+  const [table, setTable] = useState(false);
+  const {path} = useParams();
+  // console.log(path);
   const handleOpenModal = () => {
     setModalOpen(true);
   };
@@ -17,56 +21,36 @@ const Employee = ({ employee }) => {
     setModalOpen(false);
   };
 
-  const handleStatusComponent = () => {
-    setStatusComponentOpen(prevState => !prevState);
-  };
-  
   return (
-    <Col xs={2} className="d-flex flex-column justify-content-center align-items-center bg-white shadow-md rounded-lg p-3 m-4">
-      <div className='w-100 d-flex justify-content-end align-items-end'>
-        <Dropdown isOpen={statusComponentOpen} toggle={handleStatusComponent}>
-          <Dropdown.Toggle style={{ background: 'none', color: 'black', border: 'none' }} id="dropdown-basic">
-            
-          </Dropdown.Toggle>
+    <Container fluid className="bg-light min-vh-100 p-2 overflow-auto">
+      <h1 className="  ">Employee Dashboard</h1>
 
-          <Dropdown.Menu>
-            <Dropdown.Item onClick={handleOpenModal}>Edit</Dropdown.Item>
-            <Dropdown.Item onClick={() => console.log('Delete clicked')}>Delete</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-      </div>
-      <img className="rounded-circle mb-2" src={employee.image} alt={employee.name} style={{width:'100px', height:'100px'}}/>
-      <div className="">
-        <h2 className="font-weight-bold h4 mb-2">{employee.name}</h2>
-        <p className="text-muted base">{employee.role}</p>
-      </div>
-      <Modal show={isModalOpen} onHide={handleCloseModal} dialogClassName="modal-100w">
-      <Modal.Header closeButton>
-        <Modal.Title>Employee Form</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <EmployeeForm employee={employee} />
-      </Modal.Body>
-    </Modal>
-
-    </Col>
-  );
-}
-
-const AllEmployees = () => {
-  return (
-    <Container fluid className="bg-light min-vh-100 p-5 overflow-auto">
-      <h1 className="text-center display-4 py-5">Employee Dashboard</h1>
-      <div className=' w-100 d-flex justify-content-end'>
-        <Button className=' bg-primary ' >+ Add employee</Button>
-      </div>
+       { <span> 
+         <Link to="/"  className=' text-reset text-decoration-none me-1'>Home</Link> /
+        <Link to={path}  className=' text-reset text-decoration-none ms-1'>{path}</Link> 
+      </span>}
+      <div className=' w-100 d-flex justify-content-end mb-3 gap-2'> 
+      <Button style={{ background: table ? 'white' : 'orange', color: table ? 'black' : 'white', borderRadius: '25px', border: "none" }}  onClick={() => setTable(false)} > <MdOutlineGridOn size={30} className="mx-1"/> </Button>
+      <Button style={{ background: table ? 'orange' : 'white',color: table ? 'white' : 'black',  borderRadius: '25px', border: "none" }}  onClick={() => setTable(true)}><GiHamburgerMenu size={30} className="mx-1" /> </Button>
+         <Button style={{ background: 'orange', borderRadius: '25px', border: "none" }} onClick={handleOpenModal}>+ Add employee</Button>
+    </div>
       <Container>
-        <Row>
-          {employees.map((employee) => (
-            <Employee key={employee.id} employee={employee} />
-          ))}
-        </Row>
+        {table ? (
+          <Row>
+            <EmployeeTable  />
+          </Row>
+        ) : (
+          <Row xs={5} className=" w-100">
+
+            {employees.map((employee) => (
+              <EmployeeCard key={employee.id} employee={employee} />
+            ))}
+          </Row>)
+
+        }
+
       </Container>
+      <CustomModal show={isModalOpen} onHide={handleCloseModal} />
     </Container>
   )
 }

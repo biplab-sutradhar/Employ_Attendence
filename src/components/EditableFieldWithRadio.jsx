@@ -9,7 +9,7 @@ export const EditableFieldWithRadio = ({ label, initialValue, radioOptions }) =>
 
   
   return (
-    <div className="mb-3">
+    <div className="mb-4">
       <label>{label}</label>
       {isEditing ? (
         <div className='d-flex align-items-center gap-2'>

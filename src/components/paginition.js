@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
-import { FaArrowAltCircleRight, FaArrowCircleLeft } from "react-icons/fa";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const Pagination = ({ tableProps, sizePerPageList }) => {
   const [pageCount, setPageCount] = useState(tableProps.pageCount);
@@ -110,15 +110,15 @@ const Pagination = ({ tableProps, sizePerPageList }) => {
               changePage(activePage - 1);
             }}
           >
-            <Link to="#" className="page-link">
-              <FaArrowCircleLeft />
+            <Link to="#" className="page-link  bg-none border-white">
+              <MdKeyboardArrowLeft />
             </Link>
           </li>
           {(visiblePages || []).map((page, index, array) => {
             return array[index - 1] + 1 < page ? (
               <React.Fragment key={page}>
                 <li className="page-item disabled d-none d-xl-inline-block">
-                  <Link to="#" className="page-link">
+                  <Link to="#" className="page-link ">
                     ...
                   </Link>
                 </li>
@@ -133,7 +133,7 @@ const Pagination = ({ tableProps, sizePerPageList }) => {
                   )}
                   onClick={() => changePage(page)}
                 >
-                  <Link to="#" className="page-link">
+                  <Link to="#" className="page-link ">
                     {page}
                   </Link>
                 </li>
@@ -145,13 +145,15 @@ const Pagination = ({ tableProps, sizePerPageList }) => {
                   "page-item",
                   "d-none",
                   "d-xl-inline-block",
+                  "mx-2" ,
+                  "rounded-circle",
                   {
                     active: activePage === page,
                   }
                 )}
                 onClick={() => changePage(page)}
               >
-                <Link to="#" className="page-link">
+                <Link to="#" className="rounded-circle page-link">
                   {page}
                 </Link>
               </li>
@@ -167,8 +169,8 @@ const Pagination = ({ tableProps, sizePerPageList }) => {
               changePage(activePage + 1);
             }}
           >
-            <Link to="#" className="page-link">
-            <FaArrowAltCircleRight/>
+            <Link to="#" className="page-link bg-none border-white">
+            <MdKeyboardArrowRight />
             </Link>
           </li>
         </ul>

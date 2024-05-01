@@ -1,12 +1,15 @@
+import { Dropdown } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { FaFlagUsa } from "react-icons/fa";
+import { FaFlagCheckered } from "react-icons/fa6";
 
 function Header() {
   return (
-    <Navbar expand="lg" className="sticky-top bg-warning">
+    <Navbar expand="lg" className="sticky-top " style={{ backgroundColor: '#fc6075' }}>
       <Container fluid>
         <Navbar.Brand href="#">SmartHR</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -20,6 +23,20 @@ function Header() {
             
             
             
+          </Nav>
+          <Nav className=' me-2 border border-dark rounded-1'> 
+          <Dropdown>
+          <Dropdown.Toggle style={{ background: 'none', color: 'black', border: 'none' }} id="dropdown-basic">
+            
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            <Dropdown.Item > <FaFlagUsa/> En</Dropdown.Item>
+            <Dropdown.Item ><FaFlagCheckered/>Fr</Dropdown.Item>
+            <Dropdown.Item ><FaFlagUsa/>De</Dropdown.Item>
+            
+          </Dropdown.Menu>
+        </Dropdown>
           </Nav>
           <Form className="d-flex">
             <Form.Control

@@ -20,8 +20,8 @@ const AttendanceAdmin = () => {
   return (
     <div>
       <Card>
+      <h4 className="header-title">Attendance</h4>
         <Card.Body>
-          <h4 className="header-title mt-0 mb-1">Attendance Data</h4>
           <div className="table-responsive">
             <Table className="table mb-0">
               <thead>

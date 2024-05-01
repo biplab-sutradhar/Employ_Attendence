@@ -7,7 +7,7 @@ const data = [
     "to": "27 Feb 2023",
     "noOfDays": "1 day",
     "reason": "Going to Hospital",
-    "status": "",
+    "status": "pending",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/2.jpg"
   },
@@ -19,7 +19,7 @@ const data = [
     "to": "25 Jan 2023",
     "noOfDays": "10 days",
     "reason": "Going to Hospital",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/3.jpg"
   },
@@ -31,7 +31,7 @@ const data = [
     "to": "15 Jan 2023",
     "noOfDays": "10 days",
     "reason": "Going to Hospital",
-    "status": "",
+    "status": "pending",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/women/4.jpg"
   },
@@ -43,7 +43,7 @@ const data = [
     "to": "11 Jan 2023",
     "noOfDays": "2 days",
     "reason": "Going to Hospital",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/5.jpg"
   },
@@ -55,7 +55,7 @@ const data = [
     "to": "25 Feb 2023",
     "noOfDays": "2 days",
     "reason": "Personal",
-    "status": "",
+    "status": "pending",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/6.jpg"
   },
@@ -67,7 +67,7 @@ const data = [
     "to": "14 Jan 2023",
     "noOfDays": "2 days",
     "reason": "Going to Hospital",
-    "status": "",
+    "status": "pending",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/women/7.jpg"
   },
@@ -79,7 +79,7 @@ const data = [
     "to": "17 Feb 2023",
     "noOfDays": "5 days",
     "reason": "Going to Hospital",
-    "status": "",
+    "status": "pending",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/8.jpg"
   },
@@ -91,7 +91,7 @@ const data = [
     "to": "9 Mar 2023",
     "noOfDays": "2 days",
     "reason": "Going to Hospital",
-    "status": "",
+    "status": "pending",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/9.jpg"
   },
@@ -103,7 +103,7 @@ const data = [
     "to": "31 Jan 2023",
     "noOfDays": "2 days",
     "reason": "Personal",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/10.jpg"
   },
@@ -115,7 +115,7 @@ const data = [
     "to": "14 Mar 2023",
     "noOfDays": "5 days",
     "reason": "Illness",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/women/11.jpg"
   },
@@ -127,7 +127,7 @@ const data = [
     "to": "15 Apr 2023",
     "noOfDays": "10 days",
     "reason": "Vacation",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/women/12.jpg"
   },
@@ -139,7 +139,7 @@ const data = [
     "to": "21 May 2023",
     "noOfDays": "2 days",
     "reason": "Family emergency",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/13.jpg"
   },
@@ -151,7 +151,7 @@ const data = [
     "to": "30 Jun 2023",
     "noOfDays": "30 days",
     "reason": "Higher education",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/women/14.jpg"
   },
@@ -163,7 +163,7 @@ const data = [
     "to": "10 Jul 2023",
     "noOfDays": "0.5 days",
     "reason": "Personal",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/men/15.jpg"
   },
@@ -175,7 +175,7 @@ const data = [
     "to": "30 Aug 2023",
     "noOfDays": "16 days",
     "reason": "Working from home",
-    "status": "",
+    "status": "submitted",
     "action": "⋮",
     "image": "https://randomuser.me/api/portraits/women/16.jpg"
   }

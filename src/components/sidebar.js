@@ -25,16 +25,16 @@ const Sidebar = ({open, setOpen}) => {
   };
 
   return (
-    <div className={`h-100 bg-dark fixed-left text-white`} style={{width: open ? '100%' : '50px', transition: 'width 0.5s'}}>
+    <div className={`h-100 bg-dark sticky-left text-white `} style={{ width: open ? '100%' : '50px', transition: 'width 0.5s'}}>
       <div className={`d-flex${open ? ' justify-content-end':' justify-content-start'}`}>
         <GiHamburgerMenu size={30} onClick={toggleSidebar} />
       </div>
      {open && <ListGroup variant="flush">
         {sidebarItems.map((item, index) => (
-          <LinkContainer key={index} to={item.to}>
+          <LinkContainer key={index} to={item.to}
+          style={{color: activeLink === item.to? 'orange' : 'white', backgroundColor : "transparent",border : "none", fontSize : "0.9rem"}} >
             <ListGroup.Item
               action
-              className={`text-white ${activeLink === item.to ? "bg-primary text-white" : "bg-dark"}`}
               onClick={() => handleLinkClick(item.to)}
             >
              <GoDotFill/> {item.text}

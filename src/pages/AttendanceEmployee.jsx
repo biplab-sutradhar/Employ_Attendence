@@ -3,6 +3,13 @@ import { Col, Container, Row, Button, ProgressBar, ListGroup } from 'react-boots
 import HolidaysTable from '../components/holidayTable';
 
 const AttendanceEmployee = () => {
+  const staticticsData = [
+    { label: "Today", value: "3.45 / 8 hrs", progress: 3.45 / 8 * 100, variant: "warning" },
+    { label: "This Week", value: "28 / 40 hrs", progress: 28 / 40 * 100, variant: "warning" },
+    { label: "This Month", value: "90 / 160 hrs", progress: 90 / 160 * 100, variant: "success" },
+    { label: "Remaining", value: "90 / 160 hrs", progress: 90 / 160 * 100, variant: "danger" },
+    { label: "Overtime", value: "4", progress: 4 / 160 * 100, variant: "info" }
+  ];
 
   const activityData = [
     { id: 1, type: 'Punch In', time: '10:00 AM' },
@@ -23,6 +30,8 @@ const AttendanceEmployee = () => {
   return (
     <div>
       <Container>
+      <h4 className="header-title">Attendance</h4>
+
         <Row className=' gap-2'>
           <Col className=' border '>
             <div className="text-center mt-3">
@@ -63,36 +72,21 @@ const AttendanceEmployee = () => {
           <Col className='border p-2 '>
           
           <h3 className="mt-3">Statistics</h3>
-      <div className="mb-3 border">
-        <div className="d-flex align-items-center p-3">
-          <span className="font-weight-bold me-3">Today</span>
-          <ProgressBar className="flex-grow-1" variant="warning" now={21.6} label="3.45 / 8 hrs" />
+          <div>
+    {staticticsData.map((item, index) => (
+      <div key={index} className="mb-3 rounded border">
+        <div className="d-flex flex-column p-2">
+          <div className='mb-3 d-flex justify-content-between ' style={{ fontSize: '15px' }} >
+          <span className="fs-7 me-3">{item.label}</span>
+          <span className="fs-7">{item.value}</span>
+        </div>
+        <div>
+          <ProgressBar className="flex-grow-1" variant={item.variant} now={item.progress} style={{ height: '7px' }} />
         </div>
       </div>
-      <div className="mb-3 border">
-        <div className="d-flex align-items-center p-3">
-          <span className="font-weight-bold me-3">This Week</span>
-          <ProgressBar className="flex-grow-1" variant="warning" now={70} label="28 / 40 hrs" />
-        </div>
-      </div>
-      <div className="mb-3 border">
-        <div className="d-flex align-items-center p-3">
-          <span className="font-weight-bold me-3">This Month</span>
-          <ProgressBar className="flex-grow-1" variant="success" now={56.25} label="90 / 160 hrs" />
-        </div>
-      </div>
-      <div className="mb-3 border">
-        <div className="d-flex align-items-center p-3">
-          <span className="font-weight-bold me-3">Remaining</span>
-          <ProgressBar className="flex-grow-1" variant="danger" now={56.25} label="90 / 160 hrs" />
-        </div>
-      </div>
-      <div className=' border'>
-        <div className="d-flex align-items-center p-3">
-          <span className="font-weight-bold me-3">Overtime</span>
-          <ProgressBar className="flex-grow-1" variant="info" now={50} label="4" />
-        </div>
-      </div>
+    </div>
+  ))}
+</div>
           </Col>
           <Col className=' mt-4'>
           <h3>Today Activity</h3>

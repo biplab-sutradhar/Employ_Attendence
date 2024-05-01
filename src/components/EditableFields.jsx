@@ -5,7 +5,7 @@ const EditableField = ({ label, initialValue }) => {
   const [value, setValue] = useState(initialValue);
 
   return (
-    <div className="mb-3">
+    <div className="my-3">
       <label>{label}</label>
       {isEditing ? (
         <div className=' d-flex align-items-center gap-2'>
