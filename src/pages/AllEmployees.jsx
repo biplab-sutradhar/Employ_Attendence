@@ -32,7 +32,7 @@ const AllEmployees = () => {
        <Input/> 
        <Input/> 
        <Input/> 
-      <Button className="col-sm bg-success  " style={{width : "10%", height : "40px"}}>Search</Button> 
+      <Button className="col-sm bg-success  " style={{width : "25px", height : "40px"}}>Search</Button> 
       </div>
     
       
