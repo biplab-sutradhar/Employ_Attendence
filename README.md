@@ -1,4 +1,4 @@
-#Live Link (https://employeedashboard1.vercel.app/)
+# Live Link (https://employeedashboard1.vercel.app/)
 
 ---
 
@@ -45,7 +45,4 @@ Feel free to submit issues and pull requests. Contributions are welcome!
 ## License
 
 This project is licensed under the MIT License.
-
----
-
-Feel free to modify any sections as needed!
+ 
