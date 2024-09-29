@@ -58,7 +58,7 @@ const columns = [
         status=" " 
         options={[
           () => <span onClick={() => console.log('Edit clicked')}>Edit</span>,
-          () => <span onClick={() => console.log('Delete clicked')}>Delete</span>, // Correct the text to "Delete"
+          () => <span onClick={() => console.log('Delete clicked')}>Delete</span>,
         ]}
       />
     )
